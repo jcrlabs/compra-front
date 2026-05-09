@@ -9,10 +9,17 @@ import useDebounce from '../hooks/useDebounce'
 interface Product { id: string; name: string; brand: string; unit: string; unit_quantity: number; image_url: string }
 interface Category { id: string; name: string; slug: string; icon: string }
 
+const SUPERMARKETS = ['mercadona','froiz','gadis','carrefour','alcampo','eroski'] as const
+const SUPER_COLORS: Record<string, string> = {
+  mercadona: '#00a651', froiz: '#ed1c24', gadis: '#009639',
+  carrefour: '#004e9a', alcampo: '#003da5', eroski: '#e30613',
+}
+
 export default function ExplorePage() {
   const { t } = useTranslation()
   const [search, setSearch] = useState('')
   const [categoryId, setCategoryId] = useState('')
+  const [supermarket, setSupermarket] = useState('')
   const [page, setPage] = useState(1)
   const debouncedSearch = useDebounce(search, 350)
 
@@ -22,33 +29,68 @@ export default function ExplorePage() {
   })
 
   const { data, isLoading } = useQuery({
-    queryKey: ['products', debouncedSearch, categoryId, page],
-    queryFn: () => api.get('/products', { params: { search: debouncedSearch, category_id: categoryId || undefined, page, limit: 40 } }).then(r => r.data),
+    queryKey: ['products', debouncedSearch, categoryId, supermarket, page],
+    queryFn: () => api.get('/products', {
+      params: {
+        search: debouncedSearch || undefined,
+        category_id: categoryId || undefined,
+        supermarket: supermarket || undefined,
+        page,
+        limit: 40,
+      },
+    }).then(r => r.data),
   })
+
+  const resetPage = () => setPage(1)
 
   return (
     <div className="p-4 max-w-2xl mx-auto">
       {/* Search bar */}
-      <div className="relative mb-4">
+      <div className="relative mb-3">
         <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2" style={{ color: 'var(--text-3)' }} />
         <input
           type="search" placeholder={t('catalog.search')} value={search}
-          onChange={e => { setSearch(e.target.value); setPage(1) }}
+          onChange={e => { setSearch(e.target.value); resetPage() }}
           aria-label={t('catalog.search')}
           className="w-full pl-9 pr-4 py-2.5 rounded-xl text-sm outline-none"
           style={{ background: 'var(--bg-input)', border: '1px solid var(--border)', color: 'var(--text-1)' }}
         />
       </div>
 
+      {/* Supermarket filter */}
+      <div className="flex gap-1.5 overflow-x-auto pb-2 mb-2 scrollbar-none">
+        <button
+          onClick={() => { setSupermarket(''); resetPage() }}
+          className="shrink-0 px-2.5 py-1 rounded-full text-xs font-medium transition-colors"
+          style={{ background: !supermarket ? 'var(--accent)' : 'var(--bg-card)', color: !supermarket ? '#fff' : 'var(--text-2)' }}
+        >
+          {t('catalog.allSupermarkets')}
+        </button>
+        {SUPERMARKETS.map(s => (
+          <button
+            key={s}
+            onClick={() => { setSupermarket(supermarket === s ? '' : s); resetPage() }}
+            className="shrink-0 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium transition-colors"
+            style={{
+              background: supermarket === s ? 'var(--accent)' : 'var(--bg-card)',
+              color: supermarket === s ? '#fff' : 'var(--text-2)',
+            }}
+          >
+            <span className="w-2 h-2 rounded-full" style={{ background: supermarket === s ? 'rgba(255,255,255,0.6)' : SUPER_COLORS[s] }} />
+            <span className="capitalize">{s}</span>
+          </button>
+        ))}
+      </div>
+
       {/* Category pills */}
       <div className="flex gap-2 overflow-x-auto pb-2 mb-4 scrollbar-none">
-        <button onClick={() => { setCategoryId(''); setPage(1) }}
-          className={`shrink-0 px-3 py-1 rounded-full text-xs font-medium transition-colors ${!categoryId ? 'text-[var(--bg-base)]' : ''}`}
+        <button onClick={() => { setCategoryId(''); resetPage() }}
+          className="shrink-0 px-3 py-1 rounded-full text-xs font-medium transition-colors"
           style={{ background: !categoryId ? 'var(--accent)' : 'var(--bg-card)', color: !categoryId ? '#fff' : 'var(--text-2)' }}>
           {t('catalog.allCategories')}
         </button>
         {cats?.map(c => (
-          <button key={c.id} onClick={() => { setCategoryId(c.id); setPage(1) }}
+          <button key={c.id} onClick={() => { setCategoryId(c.id); resetPage() }}
             className="shrink-0 px-3 py-1 rounded-full text-xs font-medium transition-colors"
             style={{ background: categoryId === c.id ? 'var(--accent)' : 'var(--bg-card)', color: categoryId === c.id ? '#fff' : 'var(--text-2)' }}>
             {c.icon} {c.name}

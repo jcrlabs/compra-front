@@ -1,21 +1,23 @@
 {
   "app": { "name": "Compra" },
-  "nav": { "explore": "Explorar", "compare": "Comparar", "lists": "Listas", "profile": "Perfil" },
+  "nav": { "explore": "Explorar", "offers": "Ofertas", "lists": "Listas", "profile": "Perfil" },
   "auth": {
     "login": "Iniciar sesión", "register": "Rexistrarse", "logout": "Pechar sesión",
     "email": "Correo electrónico", "password": "Contrasinal", "name": "Nome",
     "loginTitle": "Benvido", "registerTitle": "Crear conta",
-    "noAccount": "Sen conta?", "haveAccount": "Xa tes conta?"
+    "noAccount": "Sen conta?", "hasAccount": "Xa tes conta?", "haveAccount": "Xa tes conta?"
   },
   "catalog": {
     "search": "Buscar produtos…", "categories": "Categorías", "allCategories": "Todas",
-    "noResults": "Sen resultados", "products": "produtos"
+    "noResults": "Sen resultados", "products": "produtos",
+    "allSupermarkets": "Todos"
   },
   "pricing": {
     "prices": "Prezos", "cheapest": "Máis barato", "history": "Histórico",
     "noPrice": "Sen prezo", "perUnit": "por unidade", "allSupermarkets": "Todos os supers",
     "supermarkets": "Supermercados", "saveWithCombo": "Aforro combinando"
   },
+  "offers": { "title": "Ofertas", "empty": "Sen ofertas dispoñibles aínda" },
   "lists": {
     "title": "As miñas listas", "new": "Nova lista", "empty": "Sen listas",
     "addItem": "Engadir produto", "items": "artigos", "optimize": "Optimizar",

@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router'
 import { useTranslation } from 'react-i18next'
-import { Search, BarChart2, ShoppingCart, User } from 'lucide-react'
+import { Search, Tag, ShoppingCart, User } from 'lucide-react'
 
 const links = [
   { to: '/',        icon: Search,       key: 'nav.explore'  },
-  { to: '/compare', icon: BarChart2,    key: 'nav.compare'  },
+  { to: '/offers',  icon: Tag,          key: 'nav.offers'   },
   { to: '/lists',   icon: ShoppingCart, key: 'nav.lists'    },
   { to: '/profile', icon: User,         key: 'nav.profile'  },
 ]
@@ -13,9 +13,9 @@ export default function BottomNav() {
   const { t } = useTranslation()
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-30 flex md:hidden"
+      className="fixed bottom-0 left-0 right-0 z-30 flex"
       style={{ background: 'var(--bg-nav)', borderTop: '1px solid var(--border)' }}
-      aria-label={t('nav.explore')}
+      aria-label="navegación principal"
     >
       {links.map(({ to, icon: Icon, key }) => (
         <NavLink

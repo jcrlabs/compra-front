@@ -1,21 +1,23 @@
 {
   "app": { "name": "Compra" },
-  "nav": { "explore": "Explore", "compare": "Compare", "lists": "Lists", "profile": "Profile" },
+  "nav": { "explore": "Explore", "offers": "Offers", "lists": "Lists", "profile": "Profile" },
   "auth": {
     "login": "Sign in", "register": "Sign up", "logout": "Sign out",
     "email": "Email", "password": "Password", "name": "Name",
     "loginTitle": "Welcome back", "registerTitle": "Create account",
-    "noAccount": "No account?", "haveAccount": "Already have an account?"
+    "noAccount": "No account?", "hasAccount": "Already have an account?", "haveAccount": "Already have an account?"
   },
   "catalog": {
     "search": "Search products…", "categories": "Categories", "allCategories": "All",
-    "noResults": "No results", "products": "products"
+    "noResults": "No results", "products": "products",
+    "allSupermarkets": "All"
   },
   "pricing": {
     "prices": "Prices", "cheapest": "Cheapest", "history": "History",
     "noPrice": "No price", "perUnit": "per unit", "allSupermarkets": "All supermarkets",
     "supermarkets": "Supermarkets", "saveWithCombo": "Save by combining"
   },
+  "offers": { "title": "Offers", "empty": "No offers available yet" },
   "lists": {
     "title": "My lists", "new": "New list", "empty": "No lists yet",
     "addItem": "Add item", "items": "items", "optimize": "Optimize",
