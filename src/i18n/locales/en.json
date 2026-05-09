@@ -1,0 +1,34 @@
+{
+  "app": { "name": "Compra" },
+  "nav": { "explore": "Explore", "compare": "Compare", "lists": "Lists", "profile": "Profile" },
+  "auth": {
+    "login": "Sign in", "register": "Sign up", "logout": "Sign out",
+    "email": "Email", "password": "Password", "name": "Name",
+    "loginTitle": "Welcome back", "registerTitle": "Create account",
+    "noAccount": "No account?", "haveAccount": "Already have an account?"
+  },
+  "catalog": {
+    "search": "Search products…", "categories": "Categories", "allCategories": "All",
+    "noResults": "No results", "products": "products"
+  },
+  "pricing": {
+    "prices": "Prices", "cheapest": "Cheapest", "history": "History",
+    "noPrice": "No price", "perUnit": "per unit", "allSupermarkets": "All supermarkets",
+    "supermarkets": "Supermarkets", "saveWithCombo": "Save by combining"
+  },
+  "lists": {
+    "title": "My lists", "new": "New list", "empty": "No lists yet",
+    "addItem": "Add item", "items": "items", "optimize": "Optimize",
+    "share": "Share list", "shareDesc": "Share this link so others can join",
+    "join": "Join list", "saving": "Estimated savings",
+    "bestCombo": "Best combination", "allInOne": "All in one store",
+    "uncovered": "No price found"
+  },
+  "prefs": { "title": "Supermarkets", "desc": "Select supermarkets to include in comparisons" },
+  "settings": { "theme": "Theme", "dark": "Dark", "light": "Light", "language": "Language" },
+  "common": {
+    "save": "Save", "cancel": "Cancel", "delete": "Delete", "edit": "Edit",
+    "loading": "Loading…", "error": "Error", "retry": "Retry",
+    "required": "Required field", "copied": "Copied!"
+  }
+}

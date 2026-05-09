@@ -1,0 +1,34 @@
+{
+  "app": { "name": "Compra" },
+  "nav": { "explore": "Explorar", "compare": "Comparar", "lists": "Listas", "profile": "Perfil" },
+  "auth": {
+    "login": "Iniciar sesión", "register": "Registrarse", "logout": "Cerrar sesión",
+    "email": "Correo electrónico", "password": "Contraseña", "name": "Nombre",
+    "loginTitle": "Bienvenido", "registerTitle": "Crear cuenta",
+    "noAccount": "¿Sin cuenta?", "haveAccount": "¿Ya tienes cuenta?"
+  },
+  "catalog": {
+    "search": "Buscar productos…", "categories": "Categorías", "allCategories": "Todas",
+    "noResults": "Sin resultados", "products": "productos"
+  },
+  "pricing": {
+    "prices": "Precios", "cheapest": "Más barato", "history": "Histórico",
+    "noPrice": "Sin precio", "perUnit": "por unidad", "allSupermarkets": "Todos los supers",
+    "supermarkets": "Supermercados", "saveWithCombo": "Ahorro combinando"
+  },
+  "lists": {
+    "title": "Mis listas", "new": "Nueva lista", "empty": "Sin listas",
+    "addItem": "Añadir producto", "items": "artículos", "optimize": "Optimizar",
+    "share": "Compartir lista", "shareDesc": "Comparte este enlace para que otros puedan unirse",
+    "join": "Unirse a lista", "saving": "Ahorro estimado",
+    "bestCombo": "Mejor combinación", "allInOne": "Todo en uno",
+    "uncovered": "Sin precio encontrado"
+  },
+  "prefs": { "title": "Supermercados", "desc": "Selecciona los supermercados a incluir en comparativas" },
+  "settings": { "theme": "Tema", "dark": "Oscuro", "light": "Claro", "language": "Idioma" },
+  "common": {
+    "save": "Guardar", "cancel": "Cancelar", "delete": "Eliminar", "edit": "Editar",
+    "loading": "Cargando…", "error": "Error", "retry": "Reintentar",
+    "required": "Campo obligatorio", "copied": "¡Copiado!"
+  }
+}
