@@ -7,7 +7,7 @@ FROM node:22-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-ARG VITE_API_URL=https://compra-api.jcrlabs.net
+ARG VITE_API_URL=https://compra-api.jcrlabs.net/api/v1
 ENV VITE_API_URL=$VITE_API_URL
 RUN npm run build
 
