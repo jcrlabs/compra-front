@@ -24,7 +24,7 @@ export default function JoinListPage() {
 
   useEffect(() => {
     if (isAuthenticated && token) mutate()
-  }, [isAuthenticated, token]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [isAuthenticated, token])
 
   if (!isAuthenticated) return null
 

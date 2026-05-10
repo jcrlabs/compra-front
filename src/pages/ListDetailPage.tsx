@@ -23,7 +23,8 @@ export default function ListDetailPage() {
   useEffect(() => {
     if (!id) return
     const token = localStorage.getItem('token')
-    const es = new EventSource(`/api/v1/lists/${id}/events?token=${token}`)
+    const apiBase = import.meta.env.VITE_API_URL || ''
+    const es = new EventSource(`${apiBase}/api/v1/lists/${id}/events?token=${token}`)
     es.onmessage = (e) => {
       try {
         const event = JSON.parse(e.data)
