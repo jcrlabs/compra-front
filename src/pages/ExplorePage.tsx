@@ -6,7 +6,7 @@ import { api } from '../api/client'
 import { Link } from 'react-router'
 import useDebounce from '../hooks/useDebounce'
 
-interface Product { id: string; name: string; brand: string; unit: string; unit_quantity: number; image_url: string }
+interface Product { id: string; name: string; brand: string; unit: string; unit_quantity: number; image_url: string; min_price?: number; cheapest_super?: string }
 interface Category { id: string; name: string; slug: string; icon: string }
 
 const SUPERMARKETS = ['mercadona','froiz','gadis','carrefour','alcampo','eroski'] as const
@@ -114,11 +114,17 @@ export default function ExplorePage() {
               {p.image_url
                 ? <img src={p.image_url} alt={p.name} className="w-14 h-14 object-contain rounded-lg shrink-0" style={{ background: 'var(--bg-surface)' }} />
                 : <div className="w-14 h-14 rounded-lg shrink-0" style={{ background: 'var(--bg-surface)' }} />}
-              <div className="min-w-0">
+              <div className="min-w-0 flex-1">
                 <p className="text-sm font-medium truncate" style={{ color: 'var(--text-1)' }}>{p.name}</p>
                 {p.brand && <p className="text-xs truncate" style={{ color: 'var(--text-3)' }}>{p.brand}</p>}
-                <p className="text-xs mt-0.5" style={{ color: 'var(--text-3)' }}>{p.unit_quantity} {p.unit}</p>
+                <p className="text-xs" style={{ color: 'var(--text-3)' }}>{p.unit_quantity} {p.unit}</p>
               </div>
+              {p.min_price != null && (
+                <div className="shrink-0 text-right ml-2">
+                  <p className="text-sm font-semibold" style={{ color: 'var(--accent)' }}>{p.min_price.toFixed(2)}€</p>
+                  {p.cheapest_super && <p className="text-xs capitalize" style={{ color: 'var(--text-3)' }}>{p.cheapest_super}</p>}
+                </div>
+              )}
             </Link>
           ))}
         </div>
