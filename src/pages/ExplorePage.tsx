@@ -9,10 +9,9 @@ import useDebounce from '../hooks/useDebounce'
 interface Product { id: string; name: string; brand: string; unit: string; unit_quantity: number; image_url: string; min_price?: number; cheapest_super?: string }
 interface Category { id: string; name: string; slug: string; icon: string }
 
-const SUPERMARKETS = ['mercadona','froiz','gadis','carrefour','alcampo','eroski'] as const
+const SUPERMARKETS = ['mercadona','froiz','alcampo','eroski'] as const
 const SUPER_COLORS: Record<string, string> = {
-  mercadona: '#00a651', froiz: '#ed1c24', gadis: '#009639',
-  carrefour: '#004e9a', alcampo: '#003da5', eroski: '#e30613',
+  mercadona: '#00a651', froiz: '#ed1c24', alcampo: '#003da5', eroski: '#e30613',
 }
 
 export default function ExplorePage() {

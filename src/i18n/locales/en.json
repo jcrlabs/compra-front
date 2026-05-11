@@ -24,7 +24,7 @@
     "share": "Share list", "shareDesc": "Share this link so others can join",
     "join": "Join list", "saving": "Estimated savings",
     "bestCombo": "Best combination", "allInOne": "All in one store",
-    "uncovered": "No price found"
+    "uncovered": "No price found", "created": "List created"
   },
   "prefs": { "title": "Supermarkets", "desc": "Select supermarkets to include in comparisons" },
   "settings": { "theme": "Theme", "dark": "Dark", "light": "Light", "language": "Language" },

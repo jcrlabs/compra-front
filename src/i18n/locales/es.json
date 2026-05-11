@@ -24,7 +24,7 @@
     "share": "Compartir lista", "shareDesc": "Comparte este enlace para que otros puedan unirse",
     "join": "Unirse a lista", "saving": "Ahorro estimado",
     "bestCombo": "Mejor combinación", "allInOne": "Todo en uno",
-    "uncovered": "Sin precio encontrado"
+    "uncovered": "Sin precio encontrado", "created": "Lista creada"
   },
   "prefs": { "title": "Supermercados", "desc": "Selecciona los supermercados a incluir en comparativas" },
   "settings": { "theme": "Tema", "dark": "Oscuro", "light": "Claro", "language": "Idioma" },

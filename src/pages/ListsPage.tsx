@@ -20,7 +20,12 @@ export default function ListsPage() {
 
   const create = useMutation({
     mutationFn: (name: string) => api.post('/lists', { name }).then(r => r.data),
-    onSuccess: () => { qc.invalidateQueries({ queryKey: ['lists'] }); setNewName('') },
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['lists'] })
+      setNewName('')
+      toast.success(t('lists.created'))
+    },
+    onError: () => toast.error(t('common.error')),
   })
 
   const copyShare = (token: string) => {
