@@ -7,9 +7,9 @@ import { Sun, Moon } from 'lucide-react'
 import toast from 'react-hot-toast'
 import i18n from '../i18n'
 
-const SUPERMARKETS = ['mercadona','froiz','gadis','carrefour','alcampo','eroski'] as const
+const SUPERMARKETS = ['mercadona','froiz','alcampo','eroski'] as const
 const SUPER_COLORS: Record<string, string> = {
-  mercadona:'#00a651',froiz:'#ed1c24',gadis:'#009639',carrefour:'#004e9a',alcampo:'#003da5',eroski:'#e30613'
+  mercadona:'#00a651',froiz:'#ed1c24',alcampo:'#003da5',eroski:'#e30613'
 }
 
 export default function ProfilePage() {
